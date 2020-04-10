@@ -1,7 +1,8 @@
+let currentIndex = 0;
 let currentImage = {
   'genre' : 'bird',
   'path' : 'images/bird.jpg'
-}
+};
 
 const imagesData = [
   {
@@ -33,23 +34,45 @@ function clickImage(e) {
       const mainImage = document.querySelector('.main-picture');
       mainImage.setAttribute('src', imagesData[i].path); 
       
+      currentIndex = i;
       currentImage = {
         'genre' : genre,
         'path' : imagesData[i].path
       }
+      console.log(currentIndex)
       return;
     }
   }
 }
 
 
-function leftClickButton() {
-  // click
+function clickLeftButton() {
+  const mainImage = document.querySelector('.main-picture');
+
+  if (currentIndex === 0) {
+    // go to the last image
+    mainImage.setAttribute('src', imagesData[3].path)
+    currentIndex = imagesData.length - 1;
+  } else {
+    // go to the previous image
+    currentIndex -= 1;
+    mainImage.setAttribute('src',imagesData[currentIndex].path); 
+  }
 }
 
 
-function rightClickButton() {
-  // click
+function clickRightButton() {
+  const mainImage = document.querySelector('.main-picture');
+
+  if (currentIndex === 3) {
+    // go to the first image
+    mainImage.setAttribute('src', imagesData[0].path)
+    currentIndex = 0;
+  } else {
+    // go to the next image
+    currentIndex += 1;
+    mainImage.setAttribute('src',imagesData[currentIndex].path);
+  }
 }
 
 

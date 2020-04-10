@@ -1,11 +1,24 @@
+h1 {
+  text-align: center;
+}
+
+.main {
+  margin: 40px;
+}
 
 .main-picture {
-  width: 60vw;
+  width: 70%;
   height: 30vw;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+table {
+  margin: auto;
 }
 
 td > button {
-  width: 20px;
+  width: 30px;
 }
 
 .image {
